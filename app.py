@@ -20,7 +20,7 @@ DATABASE = '/tmp/flask.db'
 DEBUG = True
 SECRET_KEY = '6Ld2POEqAAAAAPS0gPYLoxqVwawpRY5uuhhd5bBx'
 USERNAME = 'admin'
-PASSWORD = '1234'
+PASSWORD = '12356'
 
 
 app = Flask(__name__)
