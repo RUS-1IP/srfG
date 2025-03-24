@@ -5,9 +5,8 @@ from sqlalchemy.orm import Query
 
 class UserLogin(UserMixin):
     def fromDB(self, user_id, db_session):
-        # Вместо db.getUser используем db_session для выполнения запроса
         self.__user = db_session.query(Users).filter_by(id=user_id).first()
-        return self
+        return self if self.__user else None
 
     def create(self, user):
         self.__user = user
@@ -21,6 +20,9 @@ class UserLogin(UserMixin):
 
     def getEmail(self):
         return self.__user.email if self.__user else "Без email"
+
+    def getLogin(self):
+        return self.__user.login if self.__user else "Без логина"
 
     def getAvatar(self, app):
         img = None
