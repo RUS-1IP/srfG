@@ -107,6 +107,7 @@ class Games(db.Model):
     link = db.Column(db.Text, nullable=False)  # HTML ссылка на игру
     genre = db.Column(db.Text, nullable=True)  # Жанр
     installer = db.Column(db.Text, nullable=True)  # Путь к установщику
+    game_type = db.Column(db.String(20), nullable=False, default="link")
     time = db.Column(db.Integer, nullable=False, default=datetime.utcnow)  # Добавлено поле времени
 
     def __repr__(self):
